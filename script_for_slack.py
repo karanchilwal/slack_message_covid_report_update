@@ -70,9 +70,9 @@ def prepare_slack_message(month_id, df, cumulative_df):
         
 def send_slack_message(message: str):
     import requests
-    
+    # add your webhookURL below or save this URL in a config file and input it from that file
     payload = '{"text":"%s"}' % message
-    response = requests.post("https://hooks.slack.com/services/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", 
+    response = requests.post(webhookURL, 
                              data = payload)
     print(response.text)
  
